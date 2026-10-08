@@ -1,0 +1,21 @@
+{
+  "name": "cleancity-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Smart municipal waste management and recycling marketplace",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "npm run start -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
